@@ -1,0 +1,427 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		475C76211EF8FE270086BAEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 475C76201EF8FE270086BAEA /* main.m */; };
+		475C76241EF8FE270086BAEA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 475C76231EF8FE270086BAEA /* AppDelegate.m */; };
+		475C76271EF8FE270086BAEA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 475C76261EF8FE270086BAEA /* ViewController.m */; };
+		475C762A1EF8FE270086BAEA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 475C76281EF8FE270086BAEA /* Main.storyboard */; };
+		475C762C1EF8FE270086BAEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 475C762B1EF8FE270086BAEA /* Assets.xcassets */; };
+		475C762F1EF8FE270086BAEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 475C762D1EF8FE270086BAEA /* LaunchScreen.storyboard */; };
+		475C763A1EF8FE710086BAEA /* LocalAuthenticationPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 475C76391EF8FE710086BAEA /* LocalAuthenticationPlugin.m */; };
+		475C763E1EF904D60086BAEA /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 475C763D1EF904D60086BAEA /* LocalAuthentication.framework */; };
+		C6202FA78EE00E4D58F8621B /* libPods-LocalAuthenticationModule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DF8232B8DC0A2CA65FB8B42 /* libPods-LocalAuthenticationModule.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0DF8232B8DC0A2CA65FB8B42 /* libPods-LocalAuthenticationModule.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LocalAuthenticationModule.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		271E7ACC8CF3341223A35C6B /* Pods-LocalAuthenticationModule.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalAuthenticationModule.release.xcconfig"; path = "Pods/Target Support Files/Pods-LocalAuthenticationModule/Pods-LocalAuthenticationModule.release.xcconfig"; sourceTree = "<group>"; };
+		475C761C1EF8FE270086BAEA /* LocalAuthenticationModule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LocalAuthenticationModule.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		475C76201EF8FE270086BAEA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		475C76221EF8FE270086BAEA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		475C76231EF8FE270086BAEA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		475C76251EF8FE270086BAEA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		475C76261EF8FE270086BAEA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		475C76291EF8FE270086BAEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		475C762B1EF8FE270086BAEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		475C762E1EF8FE270086BAEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		475C76301EF8FE270086BAEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		475C76381EF8FE710086BAEA /* LocalAuthenticationPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalAuthenticationPlugin.h; sourceTree = "<group>"; };
+		475C76391EF8FE710086BAEA /* LocalAuthenticationPlugin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalAuthenticationPlugin.m; sourceTree = "<group>"; };
+		475C763D1EF904D60086BAEA /* LocalAuthentication.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocalAuthentication.framework; path = System/Library/Frameworks/LocalAuthentication.framework; sourceTree = SDKROOT; };
+		B2D8B597F5EEF1ACD9B4B457 /* Pods-LocalAuthenticationModule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LocalAuthenticationModule.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LocalAuthenticationModule/Pods-LocalAuthenticationModule.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		475C76191EF8FE270086BAEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				475C763E1EF904D60086BAEA /* LocalAuthentication.framework in Frameworks */,
+				C6202FA78EE00E4D58F8621B /* libPods-LocalAuthenticationModule.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		475C76131EF8FE270086BAEA = {
+			isa = PBXGroup;
+			children = (
+				475C76361EF8FE710086BAEA /* Shared */,
+				475C761E1EF8FE270086BAEA /* LocalAuthenticationModule */,
+				475C761D1EF8FE270086BAEA /* Products */,
+				EA915747AE3DC6B17A013EB6 /* Pods */,
+				BD1AC9DE15F92FCD92D61894 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		475C761D1EF8FE270086BAEA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				475C761C1EF8FE270086BAEA /* LocalAuthenticationModule.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		475C761E1EF8FE270086BAEA /* LocalAuthenticationModule */ = {
+			isa = PBXGroup;
+			children = (
+				475C76221EF8FE270086BAEA /* AppDelegate.h */,
+				475C76231EF8FE270086BAEA /* AppDelegate.m */,
+				475C76251EF8FE270086BAEA /* ViewController.h */,
+				475C76261EF8FE270086BAEA /* ViewController.m */,
+				475C76281EF8FE270086BAEA /* Main.storyboard */,
+				475C762B1EF8FE270086BAEA /* Assets.xcassets */,
+				475C762D1EF8FE270086BAEA /* LaunchScreen.storyboard */,
+				475C76301EF8FE270086BAEA /* Info.plist */,
+				475C761F1EF8FE270086BAEA /* Supporting Files */,
+			);
+			path = LocalAuthenticationModule;
+			sourceTree = "<group>";
+		};
+		475C761F1EF8FE270086BAEA /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				475C76201EF8FE270086BAEA /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		475C76361EF8FE710086BAEA /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				475C76371EF8FE710086BAEA /* Plugin */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		475C76371EF8FE710086BAEA /* Plugin */ = {
+			isa = PBXGroup;
+			children = (
+				475C76381EF8FE710086BAEA /* LocalAuthenticationPlugin.h */,
+				475C76391EF8FE710086BAEA /* LocalAuthenticationPlugin.m */,
+			);
+			path = Plugin;
+			sourceTree = "<group>";
+		};
+		BD1AC9DE15F92FCD92D61894 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				475C763D1EF904D60086BAEA /* LocalAuthentication.framework */,
+				0DF8232B8DC0A2CA65FB8B42 /* libPods-LocalAuthenticationModule.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EA915747AE3DC6B17A013EB6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B2D8B597F5EEF1ACD9B4B457 /* Pods-LocalAuthenticationModule.debug.xcconfig */,
+				271E7ACC8CF3341223A35C6B /* Pods-LocalAuthenticationModule.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		475C761B1EF8FE270086BAEA /* LocalAuthenticationModule */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 475C76331EF8FE270086BAEA /* Build configuration list for PBXNativeTarget "LocalAuthenticationModule" */;
+			buildPhases = (
+				21C61324CA5BB9869A129C12 /* [CP] Check Pods Manifest.lock */,
+				475C76181EF8FE270086BAEA /* Sources */,
+				475C76191EF8FE270086BAEA /* Frameworks */,
+				475C761A1EF8FE270086BAEA /* Resources */,
+				C7D699176D02F5EDDA7C9AF3 /* [CP] Embed Pods Frameworks */,
+				21D64EA1888ED0428B90187B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LocalAuthenticationModule;
+			productName = LocalAuthenticationModule;
+			productReference = 475C761C1EF8FE270086BAEA /* LocalAuthenticationModule.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		475C76141EF8FE270086BAEA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Hyunjun Kwak";
+				TargetAttributes = {
+					475C761B1EF8FE270086BAEA = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 9LGNSY89WE;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 475C76171EF8FE270086BAEA /* Build configuration list for PBXProject "LocalAuthenticationModule" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 475C76131EF8FE270086BAEA;
+			productRefGroup = 475C761D1EF8FE270086BAEA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				475C761B1EF8FE270086BAEA /* LocalAuthenticationModule */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		475C761A1EF8FE270086BAEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				475C762F1EF8FE270086BAEA /* LaunchScreen.storyboard in Resources */,
+				475C762C1EF8FE270086BAEA /* Assets.xcassets in Resources */,
+				475C762A1EF8FE270086BAEA /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		21C61324CA5BB9869A129C12 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		21D64EA1888ED0428B90187B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LocalAuthenticationModule/Pods-LocalAuthenticationModule-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C7D699176D02F5EDDA7C9AF3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LocalAuthenticationModule/Pods-LocalAuthenticationModule-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		475C76181EF8FE270086BAEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				475C763A1EF8FE710086BAEA /* LocalAuthenticationPlugin.m in Sources */,
+				475C76271EF8FE270086BAEA /* ViewController.m in Sources */,
+				475C76241EF8FE270086BAEA /* AppDelegate.m in Sources */,
+				475C76211EF8FE270086BAEA /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		475C76281EF8FE270086BAEA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				475C76291EF8FE270086BAEA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		475C762D1EF8FE270086BAEA /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				475C762E1EF8FE270086BAEA /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		475C76311EF8FE270086BAEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		475C76321EF8FE270086BAEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		475C76341EF8FE270086BAEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B2D8B597F5EEF1ACD9B4B457 /* Pods-LocalAuthenticationModule.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9LGNSY89WE;
+				INFOPLIST_FILE = LocalAuthenticationModule/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.t5online.LocalAuthenticationModule;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		475C76351EF8FE270086BAEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 271E7ACC8CF3341223A35C6B /* Pods-LocalAuthenticationModule.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9LGNSY89WE;
+				INFOPLIST_FILE = LocalAuthenticationModule/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.t5online.LocalAuthenticationModule;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		475C76171EF8FE270086BAEA /* Build configuration list for PBXProject "LocalAuthenticationModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				475C76311EF8FE270086BAEA /* Debug */,
+				475C76321EF8FE270086BAEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		475C76331EF8FE270086BAEA /* Build configuration list for PBXNativeTarget "LocalAuthenticationModule" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				475C76341EF8FE270086BAEA /* Debug */,
+				475C76351EF8FE270086BAEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 475C76141EF8FE270086BAEA /* Project object */;
+}
