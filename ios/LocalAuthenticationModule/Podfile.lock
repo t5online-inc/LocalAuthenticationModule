@@ -10,7 +10,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   NebulaCore2:
-    :commit: b5322e2c9fc2d91bf71c51d062ccf152fb9b2a34
+    :commit: 2bae07bfb330d32bc2f61ee4dbafce6e1b1b885e
     :git: https://www.t5online.com:8002/t5-frameworks/nebula.git
 
 SPEC CHECKSUMS:

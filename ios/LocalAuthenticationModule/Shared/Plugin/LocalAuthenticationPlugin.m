@@ -8,7 +8,6 @@
 
 #import "LocalAuthenticationPlugin.h"
 #import <LocalAuthentication/LocalAuthentication.h>
-#import <NebulaCore/NSObject+Json.h>
 
 #define kLAErrorUnsupportedDevice   -99
 
@@ -17,9 +16,10 @@ NSString* const kPluginStatusCodeFailure = @"500";
 @implementation LocalAuthenticationPlugin
 
 /**
- isAvailableTouchID
+ isAvailable
  */
-- (void)isAvailableTouchID {
+- (void)isAvailable {
+    NSMutableDictionary* retData = [NSMutableDictionary dictionary];
     Class laContaxtClass = NSClassFromString(@"LAContext");
     
     if (laContaxtClass) {
@@ -28,66 +28,75 @@ NSString* const kPluginStatusCodeFailure = @"500";
         BOOL isAvailable = [laContext canEvaluatePolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics error:&error];
         
         if (isAvailable) {
-            [self resolve];
+            [retData setObject:@(STATUS_CODE_SUCCESS) forKey:@"code"];
+            [retData setObject:@"" forKey:@"message"];
         } else {
             NSString* message = [self authenticationErrorMessage:[error code]];
-            [self reject:kPluginStatusCodeFailure message:message data:nil];
+            
+            [retData setObject:@(STATUS_CODE_ERROR) forKey:@"code"];
+            [retData setObject:message forKey:@"message"];
         }
     } else {
         NSString* message = [self authenticationErrorMessage:kLAErrorUnsupportedDevice];
-        [self reject:kPluginStatusCodeFailure message:message data:nil];
+        
+        [retData setObject:@(STATUS_CODE_ERROR) forKey:@"code"];
+        [retData setObject:message forKey:@"message"];
     }
+    
+    [self resolve:retData];
 }
 
 /**
- didAuthenticationTouchIDWithMessage:
+ startAuthentication:
 
  @param message Localized Reason Message
  */
-- (void)didAuthenticationTouchIDWithMessage:(NSString*)message {
-    [self didAuthenticationTouchIDWithMessage:message cancelTitle:nil fallbackTitle:nil];
+- (void)startAuthentication:(NSString*)message {
+    [self startAuthentication:message cancelTitle:nil fallbackTitle:nil];
 }
 
 /**
- didAuthenticationTouchIDWithMessage:cancelTitle:fallbackTitle:
-
- @param message Localized Reason Message
- @param cancel Localized Cancel Button Title
- @param fallback Localized Fallback Button Title
- */
-- (void)didAuthenticationTouchIDWithMessage:(NSString*)message cancelTitle:(NSString*)cancel fallbackTitle:(NSString*)fallback {
-    [self authenticationTouchIDLaPolicy:LAPolicyDeviceOwnerAuthentication withMessage:message cancelTitle:cancel fallbackTitle:fallback];
-}
-
-/**
- didAuthenticationTouchIDAndCustomPassCodeFallbackWithMessage:
-
- @param message Localized Reason Message
- */
-- (void)didAuthenticationTouchIDAndCustomPassCodeFallbackWithMessage:(NSString*)message {
-    [self didAuthenticationTouchIDAndCustomPassCodeFallbackWithMessage:message cancelTitle:nil fallbackTitle:nil];
-}
-
-/**
- didAuthenticationTouchIDAndCustomPassCodeFallbackWithMessage:cancelTitle:fallbackTitle
+ startAuthentication:cancelTitle:fallbackTitle:
 
  @param message Localized Reason Message
  @param cancel Localized Cancel Button Title
  @param fallback Localized Fallback Button Title
  */
-- (void)didAuthenticationTouchIDAndCustomPassCodeFallbackWithMessage:(NSString*)message cancelTitle:(NSString*)cancel fallbackTitle:(NSString*)fallback {
-    [self authenticationTouchIDLaPolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics withMessage:message cancelTitle:cancel fallbackTitle:fallback];
+- (void)startAuthentication:(NSString*)message cancelTitle:(NSString*)cancel fallbackTitle:(NSString*)fallback {
+//    [self startAuthenticationLaPolicy:LAPolicyDeviceOwnerAuthentication withMessage:message cancelTitle:cancel fallbackTitle:fallback];
+    [self startAuthenticationLaPolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics withMessage:message cancelTitle:cancel fallbackTitle:fallback];
 }
 
 /**
- authenticationTouchIDLaPolicy:withMessage:cancelTitle:fallbackTitle
+ startAuthenticationCustomPassCodeFallbackWithMessage:
+
+ @param message Localized Reason Message
+ */
+- (void)startAuthenticationCustomPassCode:(NSString*)message {
+    [self startAuthenticationCustomPassCode:message cancelTitle:nil fallbackTitle:nil];
+}
+
+/**
+ startAuthenticationCustomPassCodeFallbackWithMessage:cancelTitle:fallbackTitle
+
+ @param message Localized Reason Message
+ @param cancel Localized Cancel Button Title
+ @param fallback Localized Fallback Button Title
+ */
+- (void)startAuthenticationCustomPassCode:(NSString*)message cancelTitle:(NSString*)cancel fallbackTitle:(NSString*)fallback {
+    [self startAuthenticationLaPolicy:LAPolicyDeviceOwnerAuthenticationWithBiometrics withMessage:message cancelTitle:cancel fallbackTitle:fallback];
+}
+
+/**
+ authenticationLaPolicy:withMessage:cancelTitle:fallbackTitle
 
  @param policy LAPolicy
  @param message Localized Reason Message
  @param cancel Localized Cancel Button Title
  @param fallback Localized Fallback Button Title
  */
-- (void)authenticationTouchIDLaPolicy:(LAPolicy)policy withMessage:(NSString *)message cancelTitle:(NSString*)cancel fallbackTitle:(NSString*)fallback  {
+- (void)startAuthenticationLaPolicy:(LAPolicy)policy withMessage:(NSString *)message cancelTitle:(NSString*)cancel fallbackTitle:(NSString*)fallback  {
+    __block NSMutableDictionary* retData = [NSMutableDictionary dictionary];
     Class laContaxtClass = NSClassFromString(@"LAContext");
     
     if (laContaxtClass) {
@@ -106,19 +115,32 @@ NSString* const kPluginStatusCodeFailure = @"500";
         if (isAvailable) {
             [laContext evaluatePolicy:policy localizedReason:message reply:^(BOOL success, NSError * _Nullable error) {
                 if (success) {
-                    [self resolve];
+                    [retData setObject:@(STATUS_CODE_SUCCESS) forKey:@"code"];
+                    [retData setObject:@"" forKey:@"message"];
                 } else {
                     NSString* message = [self authenticationErrorMessage:[error code]];
-                    [self reject:kPluginStatusCodeFailure message:message data:nil];
+                    
+                    [retData setObject:@(STATUS_CODE_ERROR) forKey:@"code"];
+                    [retData setObject:message forKey:@"message"];
                 }
+                
+                [self resolve:retData];
             }];
         } else {
             NSString* message = [self authenticationErrorMessage:[error code]];
-            [self reject:kPluginStatusCodeFailure message:message data:nil];
+            
+            [retData setObject:@(STATUS_CODE_ERROR) forKey:@"code"];
+            [retData setObject:message forKey:@"message"];
+            
+            [self resolve:retData];
         }
     } else {
         NSString* message = [self authenticationErrorMessage:kLAErrorUnsupportedDevice];
-        [self reject:kPluginStatusCodeFailure message:message data:nil];
+        
+        [retData setObject:@(STATUS_CODE_ERROR) forKey:@"code"];
+        [retData setObject:message forKey:@"message"];
+        
+        [self resolve:retData];
     }
 }
 

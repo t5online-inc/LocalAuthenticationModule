@@ -13,10 +13,10 @@
 
 @interface LocalAuthenticationPlugin : NBPlugin
 
-- (void)isAvailableTouchID;
+- (void)isAvailable;
 
-- (void)didAuthenticationTouchIDWithMessage:(NSString*)message;
-- (void)didAuthenticationTouchIDWithMessage:(NSString*)message cancelTitle:(NSString*)cancel fallbackTitle:(NSString*)fallback;
-- (void)didAuthenticationTouchIDAndCustomPassCodeFallbackWithMessage:(NSString*)message;
-- (void)didAuthenticationTouchIDAndCustomPassCodeFallbackWithMessage:(NSString*)message cancelTitle:(NSString*)cancel fallbackTitle:(NSString*)fallback;
+- (void)startAuthentication:(NSString*)message;
+//- (void)startAuthentication:(NSString*)message cancelTitle:(NSString*)cancel fallbackTitle:(NSString*)fallback;
+//- (void)startAuthenticationCustomPassCode:(NSString*)message;
+//- (void)startAuthenticationCustomPassCode:(NSString*)message cancelTitle:(NSString*)cancel fallbackTitle:(NSString*)fallback;
 @end
