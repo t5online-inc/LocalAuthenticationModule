@@ -23,7 +23,7 @@ public class BioAuthenticationPlugin extends Plugin {
     public static final String PLUGIN_GROUP_BIO_AUTHENTICATION = "bioauthentication";
 
     public void isSupported() {
-        Log.d("", "isAvailable");
+        Log.d("", "isSupported");
         if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
             FingerprintManager fingerprintManager = this.bridgeContainer.getActivity().getSystemService(FingerprintManager.class);
 
